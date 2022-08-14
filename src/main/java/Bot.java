@@ -16,11 +16,22 @@ import java.util.Scanner;
 public class Bot extends TelegramLongPollingBot {
     final private String BOT_NAME = "super_calculator_bot";
 
+    String BOT_TOKEN;
     Storage storage;
     ReplyKeyboardMarkup replyKeyboardMarkup;
 
     Bot()
     {
+        File file = new File("./src/main/resources/token.txt");
+        Scanner sc = null;
+        try {
+            sc = new Scanner(file);
+        } catch (FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+        BOT_TOKEN = sc.nextLine();
+        sc.close();
+
         storage = new Storage();
         initKeyboard();
     }
@@ -32,15 +43,7 @@ public class Bot extends TelegramLongPollingBot {
 
     @Override
     public String getBotToken() {
-        File file = new File("./src/main/resources/token.txt");
-        Scanner sc = null;
-        try {
-            sc = new Scanner(file);
-        } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
-        }
-        String BOT_TOKEN = sc.nextLine();
-        sc.close();
+
         return BOT_TOKEN;
     }
 
