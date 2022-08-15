@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b935d9a-aeab-4389-95ac-64c538006d1f" name="Changes" comment="add arduino file">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Bot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Bot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Uart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Uart.java" afterDir="false" />
-    </list>
+    <list default="true" id="5b935d9a-aeab-4389-95ac-64c538006d1f" name="Changes" comment="add arduino file" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,6 +47,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
@@ -67,6 +74,7 @@
       <updated>1660505212693</updated>
       <workItem from="1660505213978" duration="1290000" />
       <workItem from="1660548229787" duration="10426000" />
+      <workItem from="1660576314107" duration="644000" />
     </task>
     <task id="LOCAL-00001" summary="add logic">
       <created>1660505547246</created>
