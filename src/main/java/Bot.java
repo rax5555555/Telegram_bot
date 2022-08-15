@@ -7,14 +7,17 @@ import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.Keyboard
 import org.telegram.telegrambots.meta.api.objects.replykeyboard.buttons.KeyboardRow;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 
 public class Bot extends TelegramLongPollingBot {
     final private String BOT_NAME = "super_calculator_bot";
+
+    byte[] arr1 = {-30, -101, -123, -17, -72, -113};
+    byte[] arr2 = {-16, -97, -116, -95};
 
     String BOT_TOKEN;
     Storage storage;
@@ -24,7 +27,7 @@ public class Bot extends TelegramLongPollingBot {
 
     Bot()
     {
-        uart = new Uart("COM7");
+        uart = new Uart("COM9");
 
         File file = new File("./src/main/resources/token.txt");
         Scanner sc = null;
@@ -103,8 +106,33 @@ public class Bot extends TelegramLongPollingBot {
         }
         else
             // = "Сообщение не распознано";
-            response = textMsg;
-        System.out.println(textMsg);
+            //response = textMsg;
+        {
+            try {
+                uart.uartwrite('1');
+                String infostr = "Error, please try again";
+                String[] word = uart.uartread().split(" ");
+                if (word.length == 2) {
+                    System.out.println(word[0]);
+                    System.out.println(word[1]);
+
+                    String str = new String(arr2, "UTF-8");
+                    String str2 = new String(arr1, "UTF-8");
+                    infostr = str + " temperature = " + word[0] + " C" + "\n" +
+                              str2 + " pressure = " + (int)(Double.parseDouble(word[1])/133.322) + " mm Hg";
+                }
+
+                response = infostr;
+
+            } catch (UnsupportedEncodingException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+
+
+        System.out.println(Arrays.toString(textMsg.getBytes()));
+
         return response;
     }
 
@@ -121,7 +149,16 @@ public class Bot extends TelegramLongPollingBot {
         KeyboardRow keyboardRow = new KeyboardRow();
         keyboardRows.add(keyboardRow);
         //Добавляем одну кнопку с текстом "Просвяти" наш ряд
-        keyboardRow.add(new KeyboardButton("Blink"));
+
+        try {
+            String str = new String(arr2, "UTF-8");
+
+            keyboardRow.add(new KeyboardButton(str + " Info"));
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException(e);
+        }
+
+
         keyboardRow.add(new KeyboardButton("On"));
         keyboardRow.add(new KeyboardButton("Off"));
         //добавляем лист с одним рядом кнопок в главный объект

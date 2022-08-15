@@ -38,5 +38,21 @@ public class Uart {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+
+
+    }
+
+    public String uartread() {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(port.getInputStream()));
+        String line;
+
+        try {
+            line = reader.readLine();
+            reader.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        return line;
     }
 }
