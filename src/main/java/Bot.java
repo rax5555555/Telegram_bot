@@ -18,10 +18,14 @@ public class Bot extends TelegramLongPollingBot {
 
     String BOT_TOKEN;
     Storage storage;
+
+    Uart uart;
     ReplyKeyboardMarkup replyKeyboardMarkup;
 
     Bot()
     {
+        uart = new Uart("COM7");
+
         File file = new File("./src/main/resources/token.txt");
         Scanner sc = null;
         try {
@@ -85,6 +89,18 @@ public class Bot extends TelegramLongPollingBot {
             response = "Hello, this bot remote control smart home";
         else if(textMsg.equals("/get"))
             response = storage.getRandQuote();
+        else if(textMsg.equals("Blink")) {
+            uart.uartwrite('1');
+            response = "LED Blink";
+        }
+        else if(textMsg.equals("On")) {
+            uart.uartwrite('2');
+            response = "LED On";
+        }
+        else if(textMsg.equals("Off")) {
+            uart.uartwrite('3');
+            response = "LED Off";
+        }
         else
             // = "Сообщение не распознано";
             response = textMsg;
