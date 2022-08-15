@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5b935d9a-aeab-4389-95ac-64c538006d1f" name="Changes" comment="add arduino file" />
+    <list default="true" id="5b935d9a-aeab-4389-95ac-64c538006d1f" name="Changes" comment="add photo">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,7 +76,7 @@
       <updated>1660505212693</updated>
       <workItem from="1660505213978" duration="1290000" />
       <workItem from="1660548229787" duration="10426000" />
-      <workItem from="1660576314107" duration="644000" />
+      <workItem from="1660576314107" duration="983000" />
     </task>
     <task id="LOCAL-00001" summary="add logic">
       <created>1660505547246</created>
@@ -104,7 +106,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660549874105</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add photo">
+      <created>1660578241993</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1660578241993</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +135,7 @@
     <MESSAGE value="add logic 2" />
     <MESSAGE value="add uart control" />
     <MESSAGE value="add arduino file" />
-    <option name="LAST_COMMIT_MESSAGE" value="add arduino file" />
+    <MESSAGE value="add photo" />
+    <option name="LAST_COMMIT_MESSAGE" value="add photo" />
   </component>
 </project>
